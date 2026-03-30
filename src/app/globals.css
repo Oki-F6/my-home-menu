@@ -149,14 +149,6 @@ h1 {
   transition: transform 0.2s ease;
 }
 
-.food-link:hover {
-  transform: translateY(-4px);
-}
-
-.food-link:hover .food {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
 .food {
   text-align: center;
   height: 165px;
