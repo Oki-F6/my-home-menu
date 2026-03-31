@@ -24,7 +24,7 @@ export const FoodPage = ({ id }: FoodPageProps) => {
           width="20"
           height="20"
         />
-        <span style={{ fontWeight: 600 }}>Назад</span>
+        <span style={{ fontWeight: 400 }}>Назад</span>
       </Link>
 
       <FoodImage {...recipe} />
