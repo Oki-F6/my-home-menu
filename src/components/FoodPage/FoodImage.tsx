@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface FoodImageProps {
   photo: string;
   time: string;
@@ -7,14 +9,10 @@ interface FoodImageProps {
 export const FoodImage = ({ photo, time, price }: FoodImageProps) => {
   return (
     <div className="recipe-image-wrapper">
-      <img
-        src={photo}
-        alt="Болоньезе"
-        className="recipe-main-image"
-      />
+      <img src={photo} alt="Болоньезе" className="recipe-main-image" />
       <div className="recipe-tags">
         <div className="tag">
-          <img
+          <Image
             src="images/icons/clock.svg"
             alt="clock"
             className="tag-icon"
@@ -24,7 +22,7 @@ export const FoodImage = ({ photo, time, price }: FoodImageProps) => {
           <span style={{ fontWeight: 400 }}>{time}</span>
         </div>
         <div className="tag">
-          <img
+          <Image
             src="images/icons/rub.svg"
             alt="ruble"
             className="tag-icon"

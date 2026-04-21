@@ -18,27 +18,24 @@ export const FoodPage = ({ id }: FoodPageProps) => {
 
   return (
     <div className="recipe-container">
-      {/* Кнопка назад */}
-      <div style={{ width: '100%', display: 'flex', justifyContent: 'flex-start' }}>
-        <Link href="/" className="back-button">
-          <img src="/images/icons/left.svg" alt="back" width="20" height="20" />
-          <span>Назад</span>
-        </Link>
-      </div>
+      <Link href="/" className="back-button">
+        <img src="/images/icons/left.svg" alt="back" width="20" height="20" />
+        <span>Назад</span>
+      </Link>
 
       <div className="recipe-content-layout">
-        {/* Левая колонка */}
+        {/* Левая колонка: Фото */}
         <div className="image-block">
           <FoodImage {...recipe} />
         </div>
 
-        {/* Правая колонка */}
+        {/* Правая колонка: Название выровненное по центру ингредиентов */}
         <div className="ingredients-column">
           <h1 className="recipe-title">{recipe.title}</h1>
           <RecipeIngredients ingredients={recipe.ingredients} />
         </div>
 
-        {/* Нижний блок */}
+        {/* Нижний блок: Рецепт */}
         <div className="steps-block">
           <RecipeSteps steps={recipe.steps} />
         </div>
