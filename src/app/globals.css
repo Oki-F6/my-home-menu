@@ -442,6 +442,7 @@ h1 {
 /* 1440px (Широкий экран) */
 @media (min-width: 1440px) {
   body { padding: 0 207px; }
+  .main-content {width: 1047px;}
   .footer { padding: 0 207px; }
 
   .foods { 

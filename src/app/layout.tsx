@@ -16,9 +16,11 @@ export default function RootLayout({
   return (
     <html lang="ru" data-scroll-behavior="smooth">
       <body>
-        <Header />
-        {children}
-        <Footer />
+        <div className="main-content">
+          <Header />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   );
