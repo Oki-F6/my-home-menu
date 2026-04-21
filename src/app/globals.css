@@ -73,7 +73,7 @@ img {
   border: 1px solid #e6e6e6;
   position: sticky;
   z-index: 99;
-  top: 70px;
+  top: 63px;
   margin-bottom: 20px;
   width: fit-content;
   margin-left: auto;
@@ -396,7 +396,10 @@ h1 {
   .hero-header { height: 80px;}
   .footer { padding: 0 20px; font-size: 16px; }
 
-  .nav { padding: 6px; }
+  .nav { 
+    padding: 6px;
+    top: 80px; 
+  }
   .button { padding: 6px 16px; }
   .button a { font-size: 16px; }
 
