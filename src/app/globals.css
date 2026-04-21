@@ -356,7 +356,7 @@ h1 {
 /* ========== МЕДИА-ЗАПРОСЫ ========== */
 
 /* 428px и шире */
-@media (min-width: 428px) {
+@media (min-width: 407px) {
   body { padding: 0 16px; }
   .footer { padding: 0 16px; }
   
