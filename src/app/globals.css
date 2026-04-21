@@ -454,3 +454,7 @@ h1 {
     grid-template-columns: 503px 1fr;
   }
 }
+
+.ingredients-column {
+  width: 100%;
+}
