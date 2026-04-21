@@ -1,23 +1,21 @@
+/* Базовые стили и обнуление */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 @font-face {
   font-family: "Educational Gothic";
-  src:
-    /* url("fonts/ofont.ru_Educational_Gothic.ttf") format("opentype"), */
-    url("/fonts/ofont.ru_Educational_Gothic.ttf") format("opentype"),
-    local("Educational Gothic");
+  src: url("/fonts/ofont.ru_Educational_Gothic.ttf") format("opentype"),
+       local("Educational Gothic");
   font-weight: normal;
-  font-style: normal;
   font-style: normal;
   font-display: swap;
 }
 
 html {
   scroll-behavior: smooth;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
 body {
@@ -28,7 +26,8 @@ body {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: 0 16px;
+  /* 360px: отступы по краям 14px */
+  padding: 0 14px;
 }
 
 a {
@@ -37,11 +36,12 @@ a {
 
 img {
   max-width: 100%;
+  height: auto;
 }
 
 /* Хедер */
 .hero-header {
-  padding: 20px;
+  height: 63px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,25 +53,31 @@ img {
   z-index: 100;
 }
 
-.hero-header img {
-  width: 42px;
-  height: 42px;
-  object-fit: contain;
-  flex-shrink: 0;
+.hero-header h1 {
+  font-family: "Educational Gothic", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: #000;
 }
 
-/* Навигация */
+/* Навигация (Адаптив) */
 .nav {
   background-color: #ffffff;
-  padding: 4px;
-  border-radius: 16px;
-  display: inline-flex;
-  justify-content: flex-start;
+  width: fit-content;
+  padding: 4px; /* Внутренние отступы для 360px */
+  border-radius: 40px;
+  display: flex;
+  flex-wrap: wrap; /* Чтобы всегда влезала в экран */
+  justify-content: center;
   gap: 2px;
   border: 1px solid #e6e6e6;
   position: sticky;
   z-index: 99;
-  top: 82px;
+  top: 70px;
+  margin-bottom: 20px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .button {
@@ -79,8 +85,8 @@ img {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 6px 7px;
-  border-radius: 12px;
+  padding: 5px; /* Отступы для 360px */
+  border-radius: 40px;
   transition: all 0.2s ease;
   cursor: pointer;
 }
@@ -89,32 +95,22 @@ img {
   background-color: #f04800;
 }
 
+.button a {
+  font-size: 9px; /* Размер для 360px */
+  font-weight: 400;
+  color: #504140;
+}
+
 .button.active a {
   color: white;
 }
 
-.button a {
-  font-size: 10px;
-  font-weight: 400;
-  color: #504140;
-  transition: color 0.2s ease;
-}
-
-/* Заголовки */
 h1 {
   margin: 0;
   font-family: "Educational Gothic", sans-serif;
   font-size: 24px;
   font-weight: 400;
   flex-shrink: 0;
-}
-
-/* Секции */
-.section {
-  text-align: center;
-  width: 100%;
-  margin-top: 30px;
-  scroll-margin-top: 100px;
 }
 
 .title {
@@ -137,101 +133,50 @@ h1 {
 /* Сетка блюд */
 .foods {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr); /* 2 колонки для 360px */
   gap: 10px;
   row-gap: 16px;
   width: 100%;
 }
 
-.food-link {
-  text-decoration: none;
-  display: block;
-  transition: transform 0.2s ease;
-}
-
 .food {
   text-align: center;
-  height: 165px;
-  border-radius: 12px;
-  overflow: hidden;
-  transition: box-shadow 0.2s ease;
-  cursor: pointer;
+  height: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .food img {
   width: 100%;
-  height: auto;
-  margin-bottom: 3px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
   border-radius: 20px;
+  margin-bottom: 8px;
 }
 
 .food p {
-  font-size: 13px;
+  font-size: 16px; /* Для 360px */
   font-weight: 400;
   color: #504140;
   padding: 0 0 8px 0;
+  margin-top: auto; /* Текст всегда внизу, если нужно выравнивание */
 }
 
-/* Футер и нижняя картинка */
-.bottom-cat {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 40px;
-  margin-bottom: 20px;
-}
 
-.bottom-cat img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
 
-.footer {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 16px;
-  background-color: #fefbf4;
-  border-top: 1px solid #e6e6e6;
-  font-size: 14px;
-  font-weight: 400;
-  color: #504140;
-}
 
-.footer-left {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.oki-link {
-  color: #f04800;
-  text-decoration: none;
-  font-weight: 500;
-  transition: opacity 0.2s ease;
-}
-
-.oki-link:hover {
-  opacity: 0.8;
-  text-decoration: underline;
-}
-
-.footer-right {
-  color: #504140;
-}
-
-/* ========== СТИЛИ ДЛЯ СТРАНИЦЫ РЕЦЕПТА ========== */
+/* Страница рецепта */
 .recipe-container {
-  max-width: 428px;
   width: 100%;
   margin: 0 auto;
-  padding: 20px 16px;
+  padding: 20px 0;
 }
 
-/* Кнопка назад */
+.recipe-content-layout {
+  display: flex;
+  flex-direction: column;
+}
+
 .back-button {
   display: inline-flex;
   align-items: center;
@@ -241,34 +186,20 @@ h1 {
   background-color: #ffffff;
   border-radius: 24px;
   border: 1px solid #e6e6e6;
-  font-size: 16px;
-  font-weight: 500;
   color: #504140;
-  text-decoration: none;
-  transition: color 0.2s ease;
-  white-space: nowrap;
+  font-weight: 500;
 }
 
-.back-button:hover {
-  color: #f04800;
-}
-
-/* Контейнер для картинки и тэгов */
 .recipe-image-wrapper {
   position: relative;
   width: 100%;
-  max-width: 396px;
-  margin: 0 auto;
 }
 
 .recipe-main-image {
   width: 100%;
-  height: auto;
   border-radius: 20px;
-  display: block;
 }
 
-/* Блок с тэгами */
 .recipe-tags {
   position: absolute;
   bottom: 6px;
@@ -279,16 +210,12 @@ h1 {
 
 .tag {
   background-color: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(2px);
   padding: 10px 15px;
   border-radius: 20px;
   display: flex;
   align-items: center;
   gap: 6px;
   font-size: 16px;
-  color: #504140;
-  font-weight: 400;
-  white-space: nowrap;
 }
 
 .tag-icon {
@@ -301,17 +228,15 @@ h1 {
   line-height: 1;
 }
 
-/* Название блюда */
 .recipe-title {
   text-align: center;
   font-family: "Educational Gothic", sans-serif;
   font-size: 24px;
-  font-weight: 400;
   color: #822e2e;
   margin: 30px 0;
 }
 
-/* Ингредиенты */
+/* ---------------------------- Ингредиенты ------------------------------------ */
 .ingredients-section {
   width: 100%;
   margin-bottom: 30px;
@@ -333,7 +258,7 @@ h1 {
 }
 
 .ingredients-list li {
-  font-size: 16px;
+  font-size: 16px; /* 360–768px; 1024px+ = 20px */
   font-weight: 400;
   color: #504140;
   line-height: 1.5;
@@ -355,10 +280,10 @@ h1 {
   top: 0;
 }
 
-/* Рецепт */
+/* ----------------------- Рецепт (шаги) ------------------------ */
 .steps-section {
   width: 100%;
-  margin-bottom: 40px;
+  margin-bottom: 90px;
 }
 
 .steps-title {
@@ -378,7 +303,7 @@ h1 {
 }
 
 .steps-list li {
-  font-size: 16px;
+  font-size: 16px; /* 360–768px; 1024px+ = 20px */
   font-weight: 400;
   color: #504140;
   line-height: 1.5;
@@ -399,4 +324,130 @@ h1 {
   position: absolute;
   left: 0;
   top: 0;
+}
+
+/* Футер */
+.footer {
+  width: 100%;
+  height: 63px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 14px;
+  background-color: #fefbf4;
+  border-top: 1px solid #e6e6e6;
+  font-size: 14px;
+  color: #504140;
+}
+
+.footer a {
+  color: #f04800;
+}
+
+.bottom-cat {
+ width: 100%;
+}
+
+
+
+
+
+
+/* ========== МЕДИА-ЗАПРОСЫ ========== */
+
+/* 428px и шире */
+@media (min-width: 428px) {
+  body { padding: 0 16px; }
+  .footer { padding: 0 16px; }
+  
+  .button { padding: 6px 7px; }
+  .button a { font-size: 10px; }
+
+  .steps-section { margin-bottom: 150px; }
+  
+  .foods { grid-template-columns: repeat(3, 1fr); }
+  .food p { font-size: 13px; }
+}
+
+/* 490px и шире */
+@media (min-width: 490px) {
+  .food p { font-size: 15px; }
+
+  .button { padding: 6px 9px; }
+  .button a { font-size: 12px; }
+
+  .bottom-cat { 
+    width: 396px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* 600px и шире */
+@media (min-width: 600px) {
+  .food p { font-size: 16px; }
+  .food img { margin-bottom: 12px; }
+}
+
+/* 768px (Планшет)  и шире */
+@media (min-width: 768px) {
+  body { padding: 0 20px; }
+  .hero-header { height: 80px;}
+  .footer { padding: 0 20px; font-size: 16px; }
+
+  .nav { padding: 6px; }
+  .button { padding: 6px 16px; }
+  .button a { font-size: 16px; }
+
+  .foods { 
+    grid-template-columns: repeat(5, 1fr); 
+    row-gap: 20px;
+  }
+  .food p { font-size: 15px; }
+
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Страница рецепта: Рецепт под фото и ингредиентами */
+  .recipe-content-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+  .steps-block {
+    grid-column: span 2;
+  }
+}
+
+/* 1024px (Десктоп) */
+@media (min-width: 1024px) {
+  body { padding: 0 62px; }
+  .footer { padding: 0 62px; }
+
+  .foods { gap: 10px; row-gap: 20px; }
+  .food img { margin-bottom: 10px; }
+  .food p { font-size: 16px; }
+
+  .recipe-content-layout { gap: 20px; }
+  .ingredients-list li, .steps-list li { font-size: 18px; }
+}
+
+/* 1440px (Широкий экран) */
+@media (min-width: 1440px) {
+  body { padding: 0 207px; }
+  .footer { padding: 0 207px; }
+
+  .foods { 
+    grid-template-columns: repeat(6, 1fr); 
+    column-gap: 12px;
+    row-gap: 20px;
+  }
+
+  .recipe-content-layout {
+    grid-template-columns: 503px 1fr;
+  }
 }

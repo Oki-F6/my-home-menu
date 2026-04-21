@@ -12,28 +12,37 @@ interface FoodPageProps {
 }
 
 export const FoodPage = ({ id }: FoodPageProps) => {
-  const recipe = recipes.find((r) => r.id === id)!;
+  const recipe = recipes.find((r) => r.id === id);
+
+  if (!recipe) return <div>Рецепт не найден</div>;
 
   return (
-    <div>
-      <Link href="/" className="back-button">
-        <img
-          src="images/icons/left.svg"
-          alt="clock"
-          className="tag-icon"
-          width="20"
-          height="20"
-        />
-        <span style={{ fontWeight: 400 }}>Назад</span>
-      </Link>
+    <div className="recipe-container">
+      {/* Кнопка назад */}
+      <div style={{ width: '100%', display: 'flex', justifyContent: 'flex-start' }}>
+        <Link href="/" className="back-button">
+          <img src="/images/icons/left.svg" alt="back" width="20" height="20" />
+          <span>Назад</span>
+        </Link>
+      </div>
 
-      <FoodImage {...recipe} />
+      <div className="recipe-content-layout">
+        {/* Левая колонка */}
+        <div className="image-block">
+          <FoodImage {...recipe} />
+        </div>
 
-      <h1 className="recipe-title">{recipe.title}</h1>
+        {/* Правая колонка */}
+        <div className="ingredients-column">
+          <h1 className="recipe-title">{recipe.title}</h1>
+          <RecipeIngredients ingredients={recipe.ingredients} />
+        </div>
 
-      <RecipeIngredients ingredients={recipe.ingredients} />
-
-      <RecipeSteps steps={recipe.steps} />
+        {/* Нижний блок */}
+        <div className="steps-block">
+          <RecipeSteps steps={recipe.steps} />
+        </div>
+      </div>
     </div>
   );
 };
