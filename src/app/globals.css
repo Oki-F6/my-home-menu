@@ -452,7 +452,9 @@ h1 {
   }
 
   .recipe-content-layout {
-    grid-template-columns: 503px 1fr;
+    grid-template-columns: 503px 490px; 
+    gap: 30px; /* Увеличиваем зазор между фото и текстом для воздуха */
+    justify-content: center; /* Центрируем всю сетку внутри контейнера */
   }
 }
 
