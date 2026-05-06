@@ -1,12 +1,12 @@
 export const foodTypes = [
-  "Ужины",
+  "Ужин",
   "Мясо",
-  "Салаты",
-  "Гарниры",
+  "Салат",
+  "Гарнир",
   "Доп",
-  "Супы",
-  "Десерты",
-  "Каши",
+  "Суп",
+  "Десерт",
+  "Завтрак",
 ] as const;
 
 export type FoodType = (typeof foodTypes)[number];
