@@ -798,7 +798,7 @@
     },
     {
       "id": 400,
-      "type": "Гарниры",
+      "type": "Гарнир",
       "photo": "/images/zareni_rice.png",
       "title": "Жареный рис + овощи",
       "time": "20 м",
@@ -816,7 +816,7 @@
     },
     {
       "id": 401,
-      "type": "Гарниры",
+      "type": "Гарнир",
       "photo": "/images/pure.png",
       "title": "Пюре",
       "time": "50 м",
@@ -836,7 +836,7 @@
     },
     {
       "id": 402,
-      "type": "Гарниры",
+      "type": "Гарнир",
       "photo": "/images/kartochka_po_derevenski.png",
       "title": "Картошка по‑деревенски",
       "time": "1 ч 20 м",
