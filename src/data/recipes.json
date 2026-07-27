@@ -1691,7 +1691,7 @@
     },
     {
       "id": 807,
-      "type": "Ужин",
+      "type": "Завтракн",
       "photo": "/images/avocado_toast.png",
       "title": "Тост с авокадо",
       "time": "10 м",
@@ -1715,7 +1715,7 @@
     },
     {
       "id": 808,
-      "type": "Ужин",
+      "type": "Завтрак",
       "photo": "/images/scrembl_sosiska.png",
       "title": "Скрембл + сосиска",
       "time": "15 м",
