@@ -1370,7 +1370,7 @@
     {
       "id": 706,
       "type": "Десерт",
-      "photo": "/images/yougurt_cookie.png",
+      "photo": "/images/yougurt_cookies.png",
       "title": "Йогурт + печенье",
       "time": "5 м",
       "price": 120,
@@ -1389,7 +1389,7 @@
     {
       "id": 707,
       "type": "Десерт",
-      "photo": "/images/imbirnoe_coocies.png",
+      "photo": "/images/imbirnoe_cookie.png",
       "title": "Имбирное печенье",
       "time": "1 ч",
       "price": 200,
