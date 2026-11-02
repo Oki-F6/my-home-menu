@@ -4,12 +4,13 @@ interface FoodImageProps {
   photo: string;
   time: string;
   price: number;
+  title: string;
 }
 
-export const FoodImage = ({ photo, time, price }: FoodImageProps) => {
+export const FoodImage = ({ photo, title, time, price }: FoodImageProps) => {
   return (
     <div className="recipe-image-wrapper">
-      <img src={photo} alt="Болоньезе" className="recipe-main-image" />
+      <img loading="lazy" src={photo} alt={title} className="recipe-main-image" />
       <div className="recipe-tags">
         <div className="tag">
           <Image
